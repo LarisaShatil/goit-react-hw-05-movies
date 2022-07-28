@@ -1,4 +1,7 @@
+import services from '../services/services';
+
 export const App = () => {
+  services();
   return (
     <div
       style={{
