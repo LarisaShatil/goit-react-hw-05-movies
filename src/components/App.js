@@ -4,11 +4,6 @@ import {NavBar} from './NavBar';
 import { Route, Routes } from 'react-router-dom';
 
 import { Home } from 'pages/Home';
-// import { Movies } from 'pages/Movies';
-// import { MovieDetails } from './MovieDetails';
-// import { Cast } from './Cast';
-// import { Reviews } from './Reviews';
-// import { NotFound } from '../pages/NotFound';
 import { lazy } from 'react';
 
 // if named export
@@ -26,7 +21,7 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/goit-react-hw-05-movies/" element={<NavBar />}>
+        <Route path="/" element={<NavBar />}>
           <Route index element={<Home />} />
           <Route path="movies" element={<Movies />}>
             <Route path=":movieId" element={<MovieDetails />} >
