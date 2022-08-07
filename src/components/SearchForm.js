@@ -4,10 +4,9 @@ import { getMovieByQuery } from "services/services";
 import { MovieList } from "./MovieList";
 
 export default function SearchForm() {
-  const [searchParams, setSearchParams] = useSearchParams();
-
   const [query, setQuery] = useState('');
   const [searchMovieList, setSearchMovieList] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const onChange = e => {
     setQuery(e.target.value);
@@ -16,8 +15,9 @@ export default function SearchForm() {
   const onSubmit = e => {
     e.preventDefault();
 
+// if the input is empty => return
     if (!query.trim()) {
-      return;
+      return null;
     }
 
     setSearchParams({ query: query });

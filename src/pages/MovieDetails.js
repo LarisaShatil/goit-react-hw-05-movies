@@ -1,12 +1,13 @@
 // сторінка з детальною інформацією про кінофільм
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Outlet, Link, useLocation, useParams } from "react-router-dom";
 
 import { getMovieById } from "services/services";
-import { MovieCard } from "./MovieCard";
+import { MovieCard } from "../components/MovieCard";
+import { ReturnButton } from "../components/ReturnButton";
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const location = useLocation();
   const [movie, setMovie] = useState(null);
   const {movieId}  = useParams();
@@ -24,10 +25,9 @@ export const MovieDetails = () => {
     return null;
   }
 
-  console.log(location.state)
-
   return (
     <>
+      <ReturnButton />
       <MovieCard movie={movie} />
       <h2>Additional information</h2>
       <ul>
@@ -42,7 +42,12 @@ export const MovieDetails = () => {
           </Link>
         </li>
       </ul>
-      <Outlet/>
+      <hr />
+      <Suspense fallback={null}>
+       <Outlet/>
+      </Suspense>
     </>
   );
 };
+
+export default MovieDetails;

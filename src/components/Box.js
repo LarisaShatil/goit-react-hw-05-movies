@@ -4,20 +4,18 @@ import {
   color,
   space,
   layout,
-  flexbox,
   grid,
   background,
   border,
-  position,
+  height,
 } from 'styled-system';
 
 export const Box = styled('div')(
   color,
   space,
   layout,
-  flexbox,
   grid,
   background,
   border,
-  position,
+  height,
 );

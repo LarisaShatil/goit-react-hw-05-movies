@@ -20,7 +20,15 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  img{
-    width:300px;
+ a{
+    text-decoration:none;
   }
+
+  ul {
+  list-style: none;
+}
+li{
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
 `;

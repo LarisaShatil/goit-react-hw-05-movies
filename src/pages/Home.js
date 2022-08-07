@@ -1,3 +1,4 @@
+import { Box } from "components/Box";
 import { MovieList } from "components/MovieList";
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -12,8 +13,11 @@ export const Home = () => {
 
   return (
     <>
+      <Box pt='10px' pb='10px'>
       <h3>Trending today</h3>
       <MovieList movies={trendingMovies} />
+      </Box>
+
       <Outlet/>
     </>
   )

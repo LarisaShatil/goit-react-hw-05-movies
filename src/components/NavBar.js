@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -36,7 +37,9 @@ export const NavBar = () => {
           </NavItem>
         ))}
       </Box>
-      <Outlet/>
+      <Suspense fallback={null}>
+          <Outlet/>
+      </Suspense>
     </div>
   )
 };

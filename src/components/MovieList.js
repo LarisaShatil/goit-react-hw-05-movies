@@ -19,7 +19,6 @@ export const MovieList = ({ movies }) => {
             <NavLink
               key={id}
               to={`/movies/${id}`}
-              // to={`/movies/${id}`}
               state={{ from: location }}
             >
               {title ? title : name}

@@ -6,7 +6,7 @@ import { getReviewsInfo } from "services/services";
 
 import { ReviewItem } from "./ReviewItem";
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState();
   const { movieId } = useParams();
   
@@ -19,7 +19,9 @@ export const Reviews = () => {
 
   return (
     <>
-    { reviews && reviews.length ? <ReviewItem reviews={reviews} /> : <h3>Reviews are not found</h3>}
+    { reviews && reviews.length ? <ReviewItem reviews={reviews} /> : <h3>There is no review.</h3>}
     </>
     )
 };
+
+export default Reviews;
