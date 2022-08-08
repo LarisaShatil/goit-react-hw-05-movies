@@ -5,19 +5,19 @@ import styled from 'styled-components';
 import { Box } from './Box';
 
 const navItems = [
-  { href: '/', text: 'Home' },
+  { href: '/goit-react-hw-05-movies/', text: 'Home' },
   { href: 'movies', text: 'Movies' },
 ];
 
 // when there are two classes on one component -   &.active
 
 const NavItem = styled(NavLink)`
-  padding:10px;
+  padding: 10px;
   display: flex;
   text-decoration: none;
   height: 100%;
 
-  &.active{
+  &.active {
     color: red;
   }
 
@@ -30,7 +30,7 @@ const NavItem = styled(NavLink)`
 export const NavBar = () => {
   return (
     <div>
-      <Box display='grid' gridTemplateColumns='200px 1fr'>
+      <Box display="grid" gridTemplateColumns="200px 1fr">
         {navItems.map(({ href, text }) => (
           <NavItem key={href} to={href}>
             {text}
@@ -38,8 +38,8 @@ export const NavBar = () => {
         ))}
       </Box>
       <Suspense fallback={null}>
-          <Outlet/>
+        <Outlet />
       </Suspense>
     </div>
-  )
+  );
 };
